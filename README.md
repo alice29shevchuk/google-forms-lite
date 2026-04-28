@@ -52,14 +52,3 @@ pnpm --filter server test
 | `client/` | Маршрути `/`, `/forms/new`, `/forms/:id/fill`, `/forms/:id/responses` |
 | `server/` | Форми та відповіді в пам’яті, GraphQL API |
 | `packages/shared/graphql/` | Схема `schema.graphql` для клієнтського codegen |
-
-## Git (GitHub або GitLab)
-
-Після локального коміту створіть **пустий** репозиторій на хостингу (без автогенерованого README, якщо в репо вже є `README.md`), далі:
-
-```bash
-git remote add origin <URL вашого репозиторія>
-git push -u origin main
-```
-
-Для **HTTPS** на GitHub потрібен **Personal Access Token** замість пароля; для **SSH** зареєструйте ключ у акаунті й використовуйте URL виду `git@github.com:USER/repo.git`.
