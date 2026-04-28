@@ -1,0 +1,19 @@
+{
+  "name": "google-forms-lite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo: Google Forms–like app (React + Redux RTK Query, NestJS GraphQL)",
+  "scripts": {
+    "dev": "turbo run dev --filter=client --filter=server",
+    "build": "turbo run build",
+    "codegen": "turbo run codegen --filter=client",
+    "test": "turbo run test --filter=server"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.6"
+  }
+}

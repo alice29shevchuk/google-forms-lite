@@ -1,0 +1,64 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Answer {
+  dateValue: String
+  questionId: ID!
+  selectedOptions: [String!]
+  textValue: String
+}
+
+input AnswerInput {
+  dateValue: String
+  questionId: ID!
+  selectedOptions: [String!]
+  textValue: String
+}
+
+type Form {
+  description: String
+  id: ID!
+  questions: [Question!]!
+  title: String!
+}
+
+type Mutation {
+  createForm(description: String, questions: [QuestionInput!], title: String!): Form!
+  deleteForm(id: ID!): Boolean!
+  submitResponse(answers: [AnswerInput!], formId: ID!): Response!
+}
+
+type Query {
+  form(id: ID!): Form
+  forms: [Form!]!
+  responses(formId: ID!): [Response!]!
+}
+
+type Question {
+  id: ID!
+  options: [String!]
+  order: Int!
+  prompt: String!
+  type: QuestionType!
+}
+
+input QuestionInput {
+  options: [String!]
+  order: Int!
+  prompt: String!
+  type: QuestionType!
+}
+
+enum QuestionType {
+  CHECKBOX
+  DATE
+  MULTIPLE_CHOICE
+  TEXT
+}
+
+type Response {
+  answers: [Answer!]!
+  formId: ID!
+  id: ID!
+}

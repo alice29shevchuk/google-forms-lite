@@ -1,0 +1,60 @@
+fragment FormFields on Form {
+  id
+  title
+  description
+  questions {
+    id
+    order
+    type
+    prompt
+    options
+  }
+}
+
+query Forms {
+  forms {
+    ...FormFields
+  }
+}
+
+query Form($id: ID!) {
+  form(id: $id) {
+    ...FormFields
+  }
+}
+
+query Responses($formId: ID!) {
+  responses(formId: $formId) {
+    id
+    formId
+    answers {
+      questionId
+      textValue
+      selectedOptions
+      dateValue
+    }
+  }
+}
+
+mutation CreateForm($title: String!, $description: String, $questions: [QuestionInput!]) {
+  createForm(title: $title, description: $description, questions: $questions) {
+    ...FormFields
+  }
+}
+
+mutation SubmitResponse($formId: ID!, $answers: [AnswerInput!]) {
+  submitResponse(formId: $formId, answers: $answers) {
+    id
+    formId
+    answers {
+      questionId
+      textValue
+      selectedOptions
+      dateValue
+    }
+  }
+}
+
+mutation DeleteForm($id: ID!) {
+  deleteForm(id: $id)
+}

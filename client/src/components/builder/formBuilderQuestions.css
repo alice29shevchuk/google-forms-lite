@@ -1,0 +1,95 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.builder-add-question {
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.builder-type-row {
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.builder-q-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.builder-q {
+  position: relative;
+}
+
+.builder-q-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
+}
+
+.builder-q-type-row select {
+  font: inherit;
+  max-width: 420px;
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #cdd5e5;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #1c2740;
+  cursor: pointer;
+}
+
+.builder-q-type-row select:hover {
+  border-color: #b8c5db;
+}
+
+.builder-q-type-row select:focus {
+  outline: 2px solid #731af0;
+  outline-offset: 2px;
+  border-color: #731af0;
+}
+
+.builder-q .option-row input[type='text'] {
+  flex: 1;
+  min-width: 0;
+}
+
+.builder-option-delete {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.35rem;
+  padding: 0.35rem 0.45rem !important;
+}
+
+.builder-option-delete svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.builder-option-delete:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.builder-option-delete:disabled:hover {
+  border-color: #cdd5e5;
+  background: #fff;
+}
+
+.builder-add-variant-btn {
+  margin-top: 0.35rem;
+}
